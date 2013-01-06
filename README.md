@@ -9,13 +9,13 @@
 
 > 简介: 用来进行时间工作管理一个开源工具。
 
-> 开发语言: C++
+> 开发语言: C++/JAVA
 
-> 图形库: Qt
+> 图形库: Qt/ N/A
 
 > 数据库：sqlite/MySQL
 
-> 开发环境: Qt Creator
+> 开发环境: Qt Creator/Eclipse
 
 > 版本控制: Git
 
