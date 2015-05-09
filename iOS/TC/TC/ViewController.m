@@ -10,13 +10,18 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *myOnButton;
+@property (weak, nonatomic) IBOutlet UIButton *myOffButton;
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [_myOnButton setTransform:CGAffineTransformMakeRotation(-M_PI/3)];
+    [_myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
 }
 
 - (void)didReceiveMemoryWarning {
