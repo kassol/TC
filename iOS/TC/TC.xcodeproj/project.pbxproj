@@ -16,6 +16,7 @@
 		BD4283881AE7B0C400953F61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4283871AE7B0C400953F61 /* Images.xcassets */; };
 		BD42838B1AE7B0C400953F61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4283891AE7B0C400953F61 /* LaunchScreen.xib */; };
 		BD4283971AE7B0C400953F61 /* TCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4283961AE7B0C400953F61 /* TCTests.m */; };
+		BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		BD4283901AE7B0C400953F61 /* TCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4283951AE7B0C400953F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4283961AE7B0C400953F61 /* TCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTests.m; sourceTree = "<group>"; };
+		BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProViewController.h; sourceTree = "<group>"; };
+		BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				BD42837C1AE7B0C400953F61 /* AppDelegate.m */,
 				BD4283811AE7B0C400953F61 /* ViewController.h */,
 				BD4283821AE7B0C400953F61 /* ViewController.m */,
+				BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */,
+				BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */,
 				BD4283841AE7B0C400953F61 /* Main.storyboard */,
 				BD4283871AE7B0C400953F61 /* Images.xcassets */,
 				BD4283891AE7B0C400953F61 /* LaunchScreen.xib */,
@@ -297,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */,
 				BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */,
 				BD42837A1AE7B0C400953F61 /* main.m in Sources */,
 				BD4283831AE7B0C400953F61 /* ViewController.m in Sources */,
