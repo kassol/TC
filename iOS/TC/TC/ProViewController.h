@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ProViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @end

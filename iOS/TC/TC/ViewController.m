@@ -20,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_myOnButton setTransform:CGAffineTransformMakeRotation(-M_PI/3)];
-    [_myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
+    [self.myOnButton setTransform:CGAffineTransformMakeRotation(-M_PI/3)];
+    [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
