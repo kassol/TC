@@ -11,9 +11,9 @@
 @interface CatalogItem : NSObject
 
 @property (nonatomic, strong)NSString* catalogName;
-@property (nonatomic)unsigned int numInCatalog;
+@property (nonatomic)NSUInteger numInCatalog;
 
 - (instancetype)initWithCatalogName:(NSString*)name
-                     andNum:(unsigned int)num;
+                     andNum:(NSUInteger)num;
 
 @end

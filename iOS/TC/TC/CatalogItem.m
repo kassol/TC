@@ -10,7 +10,7 @@
 
 @implementation CatalogItem
 
-- (instancetype)initWithCatalogName:(NSString *)name andNum:(unsigned int)num {
+- (instancetype)initWithCatalogName:(NSString *)name andNum:(NSUInteger)num {
     self.catalogName = name;
     self.numInCatalog =  num;
     return self;

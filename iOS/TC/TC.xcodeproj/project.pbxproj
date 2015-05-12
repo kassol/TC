@@ -16,6 +16,11 @@
 		BD4283881AE7B0C400953F61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4283871AE7B0C400953F61 /* Images.xcassets */; };
 		BD42838B1AE7B0C400953F61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4283891AE7B0C400953F61 /* LaunchScreen.xib */; };
 		BD4283971AE7B0C400953F61 /* TCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4283961AE7B0C400953F61 /* TCTests.m */; };
+		BD8BCD4E1B01D1E700BBCBFD /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8BCD4D1B01D1E700BBCBFD /* AddViewController.m */; };
+		BD8BCD511B01F2B500BBCBFD /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8BCD501B01F2B500BBCBFD /* SettingViewController.m */; };
+		BD8BCD541B01F78000BBCBFD /* Catalog.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8BCD531B01F78000BBCBFD /* Catalog.m */; };
+		BD8BCD581B01FCFC00BBCBFD /* SettingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8BCD571B01FCFC00BBCBFD /* SettingInfo.m */; };
+		BD8BCD5B1B02001E00BBCBFD /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8BCD5A1B02001E00BBCBFD /* SettingTableViewCell.m */; };
 		BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */; };
 		BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */; };
 		BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */; };
@@ -49,6 +54,17 @@
 		BD4283901AE7B0C400953F61 /* TCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4283951AE7B0C400953F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4283961AE7B0C400953F61 /* TCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTests.m; sourceTree = "<group>"; };
+		BD8BCD4A1B01C7AE00BBCBFD /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "Pods/../build/Debug-iphoneos/Pods-TC/Spring.framework"; sourceTree = "<group>"; };
+		BD8BCD4C1B01D1E700BBCBFD /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		BD8BCD4D1B01D1E700BBCBFD /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		BD8BCD4F1B01F2B500BBCBFD /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		BD8BCD501B01F2B500BBCBFD /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		BD8BCD521B01F78000BBCBFD /* Catalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catalog.h; sourceTree = "<group>"; };
+		BD8BCD531B01F78000BBCBFD /* Catalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catalog.m; sourceTree = "<group>"; };
+		BD8BCD561B01FCFC00BBCBFD /* SettingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingInfo.h; sourceTree = "<group>"; };
+		BD8BCD571B01FCFC00BBCBFD /* SettingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingInfo.m; sourceTree = "<group>"; };
+		BD8BCD591B02001E00BBCBFD /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
+		BD8BCD5A1B02001E00BBCBFD /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProViewController.h; sourceTree = "<group>"; };
 		BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProViewController.m; sourceTree = "<group>"; };
 		BDD3FE451B007700004BD1D4 /* CatalogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogTableViewCell.h; sourceTree = "<group>"; };
@@ -108,16 +124,21 @@
 		BD4283761AE7B0C400953F61 /* TC */ = {
 			isa = PBXGroup;
 			children = (
+				BD8BCD551B01FC7F00BBCBFD /* modal */,
 				BD42837B1AE7B0C400953F61 /* AppDelegate.h */,
 				BD42837C1AE7B0C400953F61 /* AppDelegate.m */,
-				BDD3FE491B007E4F004BD1D4 /* CatalogItem.h */,
-				BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */,
 				BD4283811AE7B0C400953F61 /* ViewController.h */,
 				BD4283821AE7B0C400953F61 /* ViewController.m */,
 				BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */,
 				BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */,
+				BD8BCD4C1B01D1E700BBCBFD /* AddViewController.h */,
+				BD8BCD4D1B01D1E700BBCBFD /* AddViewController.m */,
 				BDD3FE451B007700004BD1D4 /* CatalogTableViewCell.h */,
 				BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */,
+				BD8BCD591B02001E00BBCBFD /* SettingTableViewCell.h */,
+				BD8BCD5A1B02001E00BBCBFD /* SettingTableViewCell.m */,
+				BD8BCD4F1B01F2B500BBCBFD /* SettingViewController.h */,
+				BD8BCD501B01F2B500BBCBFD /* SettingViewController.m */,
 				BD4283841AE7B0C400953F61 /* Main.storyboard */,
 				BD4283871AE7B0C400953F61 /* Images.xcassets */,
 				BD4283891AE7B0C400953F61 /* LaunchScreen.xib */,
@@ -153,9 +174,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BD8BCD551B01FC7F00BBCBFD /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				BDD3FE491B007E4F004BD1D4 /* CatalogItem.h */,
+				BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */,
+				BD8BCD521B01F78000BBCBFD /* Catalog.h */,
+				BD8BCD531B01F78000BBCBFD /* Catalog.m */,
+				BD8BCD561B01FCFC00BBCBFD /* SettingInfo.h */,
+				BD8BCD571B01FCFC00BBCBFD /* SettingInfo.m */,
+			);
+			name = modal;
+			sourceTree = "<group>";
+		};
 		D047FEBA9572F227444A7C0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD8BCD4A1B01C7AE00BBCBFD /* Spring.framework */,
 				67260FBF64BE0E908F0089E4 /* Pods_TC.framework */,
 			);
 			name = Frameworks;
@@ -314,10 +349,15 @@
 			files = (
 				BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */,
 				BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */,
+				BD8BCD5B1B02001E00BBCBFD /* SettingTableViewCell.m in Sources */,
 				BD42837A1AE7B0C400953F61 /* main.m in Sources */,
+				BD8BCD581B01FCFC00BBCBFD /* SettingInfo.m in Sources */,
+				BD8BCD541B01F78000BBCBFD /* Catalog.m in Sources */,
 				BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */,
 				BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */,
+				BD8BCD511B01F2B500BBCBFD /* SettingViewController.m in Sources */,
 				BD4283831AE7B0C400953F61 /* ViewController.m in Sources */,
+				BD8BCD4E1B01D1E700BBCBFD /* AddViewController.m in Sources */,
 				BD4283801AE7B0C400953F61 /* TC.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +486,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-TC",
+				);
 				INFOPLIST_FILE = TC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-TC",
+				);
 				INFOPLIST_FILE = TC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
