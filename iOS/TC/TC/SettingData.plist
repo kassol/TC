@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LongBreakAfter</key>
+	<array>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+		<integer>6</integer>
+		<integer>7</integer>
+		<integer>8</integer>
+		<integer>9</integer>
+		<integer>10</integer>
+	</array>
+	<key>LongBreak</key>
+	<array>
+		<integer>5</integer>
+		<integer>10</integer>
+		<integer>15</integer>
+		<integer>20</integer>
+		<integer>25</integer>
+		<integer>30</integer>
+	</array>
+	<key>ShortBreak</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+		<integer>6</integer>
+		<integer>7</integer>
+		<integer>8</integer>
+		<integer>9</integer>
+		<integer>10</integer>
+		<integer>11</integer>
+		<integer>12</integer>
+		<integer>13</integer>
+		<integer>14</integer>
+		<integer>15</integer>
+	</array>
+	<key>PomodoroDuration</key>
+	<array>
+		<integer>5</integer>
+		<integer>10</integer>
+		<integer>15</integer>
+		<integer>20</integer>
+		<integer>25</integer>
+		<integer>30</integer>
+		<integer>35</integer>
+		<integer>40</integer>
+		<integer>45</integer>
+		<integer>50</integer>
+		<integer>55</integer>
+		<integer>60</integer>
+	</array>
+</dict>
+</plist>

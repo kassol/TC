@@ -594,17 +594,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="AboutBG" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-AW-4Va">
+                                <rect key="frame" x="0.0" y="304" width="600" height="41"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-pq-UkD">
+                                <rect key="frame" x="0.0" y="304" width="600" height="41"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aMH-pq-UkD" firstAttribute="width" secondItem="QV7-AW-4Va" secondAttribute="width" id="2Kv-fP-kpC"/>
+                            <constraint firstItem="aMH-pq-UkD" firstAttribute="centerY" secondItem="QV7-AW-4Va" secondAttribute="centerY" id="2ya-Ym-DiN"/>
                             <constraint firstItem="HKh-52-aTi" firstAttribute="width" secondItem="U5L-2b-8m3" secondAttribute="width" id="397-QR-kgr"/>
+                            <constraint firstItem="aMH-pq-UkD" firstAttribute="height" secondItem="QV7-AW-4Va" secondAttribute="height" id="4ou-RN-b9Q"/>
                             <constraint firstItem="Cwd-VT-Wg6" firstAttribute="centerX" secondItem="ZN6-Lb-ooN" secondAttribute="centerX" id="8gE-nt-oDJ"/>
                             <constraint firstItem="Cwd-VT-Wg6" firstAttribute="height" secondItem="ZN6-Lb-ooN" secondAttribute="height" id="CbW-cN-azk"/>
+                            <constraint firstAttribute="centerX" secondItem="QV7-AW-4Va" secondAttribute="centerX" id="D4d-2N-qaI"/>
                             <constraint firstItem="HKh-52-aTi" firstAttribute="top" secondItem="qmJ-wp-fcj" secondAttribute="bottom" id="I5B-wC-ILJ"/>
                             <constraint firstItem="xft-M9-AnM" firstAttribute="centerY" secondItem="HKh-52-aTi" secondAttribute="centerY" id="IAI-Eo-BgY"/>
                             <constraint firstItem="wjm-9C-DSR" firstAttribute="height" secondItem="U5L-2b-8m3" secondAttribute="height" id="JVF-tm-Xuk"/>
                             <constraint firstItem="HKh-52-aTi" firstAttribute="leading" secondItem="TjI-8l-ccf" secondAttribute="leading" constant="-10" id="JbC-S8-PO8"/>
+                            <constraint firstItem="aMH-pq-UkD" firstAttribute="centerX" secondItem="QV7-AW-4Va" secondAttribute="centerX" id="Jhc-TO-4M6"/>
+                            <constraint firstItem="QV7-AW-4Va" firstAttribute="top" secondItem="Cwd-VT-Wg6" secondAttribute="bottom" constant="50" id="PRj-AD-aGI"/>
                             <constraint firstAttribute="centerY" secondItem="wjm-9C-DSR" secondAttribute="centerY" id="Ra8-fT-Tks"/>
+                            <constraint firstItem="QV7-AW-4Va" firstAttribute="width" secondItem="U5L-2b-8m3" secondAttribute="width" id="XD3-Vh-VvH"/>
                             <constraint firstItem="Cwd-VT-Wg6" firstAttribute="width" secondItem="ZN6-Lb-ooN" secondAttribute="width" id="YUr-EY-uEH"/>
                             <constraint firstAttribute="centerX" secondItem="HKh-52-aTi" secondAttribute="centerX" id="YVm-Pc-Q5O"/>
                             <constraint firstItem="ZN6-Lb-ooN" firstAttribute="width" secondItem="U5L-2b-8m3" secondAttribute="width" id="d3w-fq-1Hc"/>
@@ -619,6 +636,7 @@
                     </view>
                     <connections>
                         <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="7rE-ki-ipH"/>
+                        <segue destination="FdV-rj-eph" kind="presentation" identifier="SettingDetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="2Oz-Af-vmH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4J-7b-zfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,8 +644,83 @@
             </objects>
             <point key="canvasLocation" x="854" y="383"/>
         </scene>
+        <!--Time Picker View Controller-->
+        <scene sceneID="pXx-Mu-U5n">
+            <objects>
+                <viewController id="FdV-rj-eph" customClass="TimePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0JN-ts-79b"/>
+                        <viewControllerLayoutGuide type="bottom" id="bME-92-iXL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IXt-8q-krU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csn-Ci-uOc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ake-B3-wm5" kind="unwind" unwindAction="unwindToViewController:" id="e06-5f-eET"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfj-0L-Y2Z">
+                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.2627450980392157" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="tkv-zP-flf"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-sn-5e7">
+                                <rect key="frame" x="300" y="390" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.26274509800000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD1-xx-IBJ">
+                                <rect key="frame" x="0.0" y="390" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.26274509800000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ake-B3-wm5" kind="unwind" unwindAction="unwindToViewController:" id="B1r-qz-G38"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ubn-sn-5e7" firstAttribute="leading" secondItem="JD1-xx-IBJ" secondAttribute="trailing" id="5MN-qZ-nkO"/>
+                            <constraint firstItem="Lfj-0L-Y2Z" firstAttribute="top" secondItem="JD1-xx-IBJ" secondAttribute="bottom" id="6bO-Fe-gjU"/>
+                            <constraint firstAttribute="centerY" secondItem="csn-Ci-uOc" secondAttribute="centerY" id="9OR-4s-cV5"/>
+                            <constraint firstItem="Lfj-0L-Y2Z" firstAttribute="top" secondItem="ubn-sn-5e7" secondAttribute="bottom" id="LjP-lR-NBB"/>
+                            <constraint firstAttribute="centerX" secondItem="csn-Ci-uOc" secondAttribute="centerX" id="RXX-47-7Yf"/>
+                            <constraint firstItem="csn-Ci-uOc" firstAttribute="height" secondItem="IXt-8q-krU" secondAttribute="height" id="c7A-rj-6xd"/>
+                            <constraint firstItem="csn-Ci-uOc" firstAttribute="width" secondItem="IXt-8q-krU" secondAttribute="width" id="moT-7G-jMr"/>
+                            <constraint firstItem="Lfj-0L-Y2Z" firstAttribute="width" secondItem="IXt-8q-krU" secondAttribute="width" id="oam-gu-2lc"/>
+                            <constraint firstItem="JD1-xx-IBJ" firstAttribute="leading" secondItem="IXt-8q-krU" secondAttribute="leading" id="okU-Cw-fPe"/>
+                            <constraint firstItem="bME-92-iXL" firstAttribute="top" secondItem="Lfj-0L-Y2Z" secondAttribute="bottom" id="ttW-1M-pc8"/>
+                            <constraint firstAttribute="centerX" secondItem="Lfj-0L-Y2Z" secondAttribute="centerX" id="uKq-7b-RgM"/>
+                            <constraint firstItem="JD1-xx-IBJ" firstAttribute="width" secondItem="ubn-sn-5e7" secondAttribute="width" id="ugg-oN-Idi"/>
+                            <constraint firstAttribute="trailing" secondItem="ubn-sn-5e7" secondAttribute="trailing" id="zSY-Qj-yNM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timePicker" destination="Lfj-0L-Y2Z" id="JGR-06-eED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asp-fn-mZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ake-B3-wm5" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="383"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="AboutBG" width="375" height="41"/>
         <image name="Active" width="119" height="174"/>
         <image name="Add" width="60" height="60"/>
         <image name="BackButton" width="12" height="22"/>

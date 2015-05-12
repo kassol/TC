@@ -52,4 +52,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"SettingDetailSegue" sender:self];
+    
+    [self.settingTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 @end
