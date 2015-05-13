@@ -44,7 +44,15 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (component == 0) {
-        return [self.pomodoroDurationTimes count];
+        if (self.selectedTableIndex == 0) {
+            return [self.pomodoroDurationTimes count];
+        } else if (self.selectedTableIndex == 1) {
+            return [self.shortBreakTimes count];
+        } else if (self.selectedTableIndex == 2) {
+            return [self.longBreakTimes count];
+        } else {
+            return [self.longBreakAfterTimes count];
+        }
     } else {
         return 1;
     }
@@ -56,9 +64,21 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
-        return [[NSString alloc] initWithFormat:@"%@", [self.pomodoroDurationTimes objectAtIndex:row]];
+        if (self.selectedTableIndex == 0) {
+            return [[NSString alloc] initWithFormat:@"%@", [self.pomodoroDurationTimes objectAtIndex:row]];
+        } else if (self.selectedTableIndex == 1) {
+            return [[NSString alloc] initWithFormat:@"%@", [self.shortBreakTimes objectAtIndex:row]];
+        } else if (self.selectedTableIndex == 2) {
+            return [[NSString alloc] initWithFormat:@"%@", [self.longBreakTimes objectAtIndex:row]];
+        } else {
+            return [[NSString alloc] initWithFormat:@"%@", [self.longBreakAfterTimes objectAtIndex:row]];
+        }
     } else {
-        return @"minutes";
+        if (self.selectedTableIndex == 3) {
+            return @"pomodoros";
+        } else {
+            return @"minutes";
+        }
     }
 }
 

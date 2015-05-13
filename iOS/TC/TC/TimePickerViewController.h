@@ -10,4 +10,6 @@
 
 @interface TimePickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
+@property (nonatomic)NSInteger selectedTableIndex;
+
 @end
