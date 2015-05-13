@@ -554,6 +554,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cwd-VT-Wg6">
                                 <rect key="frame" x="26" y="96" width="548" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingTableCell" id="T3S-Er-qbB" customClass="SettingTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -569,8 +571,8 @@
                                                     <color key="textColor" red="0.72941176470588232" green="0.73725490196078436" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRq-cD-uOe">
-                                                    <rect key="frame" x="472" y="8" width="76" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRq-cD-uOe">
+                                                    <rect key="frame" x="462" y="8" width="76" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="M6T-rw-NW4"/>
                                                     </constraints>
@@ -631,7 +633,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="7rE-ki-ipH"/>
+                        <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="MFh-qE-LlE"/>
                         <segue destination="FdV-rj-eph" kind="presentation" identifier="SettingDetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="2Oz-Af-vmH"/>
                     </connections>
                 </viewController>
@@ -668,14 +670,6 @@
                                     <constraint firstAttribute="height" constant="180" id="tkv-zP-flf"/>
                                 </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-sn-5e7">
-                                <rect key="frame" x="300" y="390" width="300" height="30"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.26274509800000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD1-xx-IBJ">
                                 <rect key="frame" x="0.0" y="390" width="300" height="30"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.26274509800000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
@@ -685,6 +679,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="ake-B3-wm5" kind="unwind" unwindAction="unwindToViewController:" id="B1r-qz-G38"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-sn-5e7">
+                                <rect key="frame" x="300" y="390" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.26274509800000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ake-B3-wm5" kind="unwind" unwindAction="unwindToViewController:" id="Rku-I8-plU"/>
                                 </connections>
                             </button>
                         </subviews>

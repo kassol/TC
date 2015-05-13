@@ -12,7 +12,6 @@
 #import "TimePickerViewController.h"
 
 @interface SettingViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 @property (nonatomic, strong)NSArray *settingLabelHeaders;
 
 @end
@@ -63,7 +62,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual: @"SettingDetailSegue"]) {
         TimePickerViewController* toView = segue.destinationViewController;
-        toView.selectedTableIndex = [self.settingTableView indexPathForCell:(UITableViewCell *)sender].row;
+        toView.selectedTableIndex = [self.settingTableView indexPathForCell:(SettingTableViewCell *)sender].row;
     }
 }
 

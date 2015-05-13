@@ -7,6 +7,8 @@
 //
 
 #import "TimePickerViewController.h"
+#import "SettingInfo.h"
+#import "SettingViewController.h"
 
 @interface TimePickerViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *timePicker;
@@ -38,8 +40,36 @@
     self.timePicker.delegate = self;
     self.timePicker.dataSource = self;
     
+    if (self.selectedTableIndex == 0) {
+        NSInteger row = [SettingInfo sharedSettingInfo].pomodoroDuration/5-1;
+        [self.timePicker selectRow:row inComponent:0 animated:YES];
+    } else if (self.selectedTableIndex == 1) {
+        NSInteger row = [SettingInfo sharedSettingInfo].shortBreak-1;
+        [self.timePicker selectRow:row inComponent:0 animated:YES];
+    } else if (self.selectedTableIndex == 2) {
+        NSInteger row = [SettingInfo sharedSettingInfo].longBreak/5-1;
+        [self.timePicker selectRow:row inComponent:0 animated:YES];
+    } else if (self.selectedTableIndex == 3) {
+        NSInteger row = [SettingInfo sharedSettingInfo].longBreakAfter-2;
+        [self.timePicker selectRow:row inComponent:0 animated:YES];
+    }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[(UIButton*)sender currentTitle]  isEqual: @"OK"]) {
+        if (self.selectedTableIndex == 0) {
+            [SettingInfo sharedSettingInfo].pomodoroDuration = [[self.pomodoroDurationTimes objectAtIndex:[self.timePicker selectedRowInComponent:0]] unsignedIntegerValue];
+        } else if (self.selectedTableIndex == 1) {
+            [SettingInfo sharedSettingInfo].shortBreak = [[self.shortBreakTimes objectAtIndex:[self.timePicker selectedRowInComponent:0]] unsignedIntegerValue];
+        } else if (self.selectedTableIndex == 2) {
+            [SettingInfo sharedSettingInfo].longBreak = [[self.longBreakTimes objectAtIndex:[self.timePicker selectedRowInComponent:0]] unsignedIntegerValue];
+        } else if (self.selectedTableIndex == 3) {
+            [SettingInfo sharedSettingInfo].longBreakAfter = [[self.longBreakAfterTimes objectAtIndex:[self.timePicker selectedRowInComponent:0]] unsignedIntegerValue];
+        }
+        SettingViewController* toView = segue.destinationViewController;
+        [toView.settingTableView reloadData];
+    }
+}
 
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
