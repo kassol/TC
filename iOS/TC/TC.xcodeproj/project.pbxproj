@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24B4E810C54C4D4437EDD48A /* Pods_TC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67260FBF64BE0E908F0089E4 /* Pods_TC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BD1926B41B04595F001A5C02 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1926B31B04595F001A5C02 /* ProgressView.m */; };
 		BD42837A1AE7B0C400953F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4283791AE7B0C400953F61 /* main.m */; };
 		BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD42837C1AE7B0C400953F61 /* AppDelegate.m */; };
 		BD4283801AE7B0C400953F61 /* TC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD42837E1AE7B0C400953F61 /* TC.xcdatamodeld */; };
@@ -42,6 +43,8 @@
 		32FDE9838E55F6C630BDDF1F /* Pods-TC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TC/Pods-TC.release.xcconfig"; sourceTree = "<group>"; };
 		5442C3080CC6D8D6D26EBC1E /* Pods-TC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TC/Pods-TC.debug.xcconfig"; sourceTree = "<group>"; };
 		67260FBF64BE0E908F0089E4 /* Pods_TC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1926B21B04595F001A5C02 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		BD1926B31B04595F001A5C02 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		BD4283741AE7B0C400953F61 /* TC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4283781AE7B0C400953F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4283791AE7B0C400953F61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				BD8BCD551B01FC7F00BBCBFD /* modal */,
 				BD42837B1AE7B0C400953F61 /* AppDelegate.h */,
 				BD42837C1AE7B0C400953F61 /* AppDelegate.m */,
+				BD1926B21B04595F001A5C02 /* ProgressView.h */,
+				BD1926B31B04595F001A5C02 /* ProgressView.m */,
 				BD4283811AE7B0C400953F61 /* ViewController.h */,
 				BD4283821AE7B0C400953F61 /* ViewController.m */,
 				BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */,
@@ -361,6 +366,7 @@
 				BD8BCD5B1B02001E00BBCBFD /* SettingTableViewCell.m in Sources */,
 				BD42837A1AE7B0C400953F61 /* main.m in Sources */,
 				BD8BCD581B01FCFC00BBCBFD /* SettingInfo.m in Sources */,
+				BD1926B41B04595F001A5C02 /* ProgressView.m in Sources */,
 				BD8BCD541B01F78000BBCBFD /* Catalog.m in Sources */,
 				BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */,
 				BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */,
