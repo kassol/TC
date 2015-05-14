@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24B4E810C54C4D4437EDD48A /* Pods_TC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67260FBF64BE0E908F0089E4 /* Pods_TC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BD1926B41B04595F001A5C02 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1926B31B04595F001A5C02 /* ProgressView.m */; };
+		BD1926B71B048594001A5C02 /* ProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1926B61B048593001A5C02 /* ProgressLabel.m */; };
 		BD42837A1AE7B0C400953F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4283791AE7B0C400953F61 /* main.m */; };
 		BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD42837C1AE7B0C400953F61 /* AppDelegate.m */; };
 		BD4283801AE7B0C400953F61 /* TC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD42837E1AE7B0C400953F61 /* TC.xcdatamodeld */; };
@@ -45,6 +46,8 @@
 		67260FBF64BE0E908F0089E4 /* Pods_TC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1926B21B04595F001A5C02 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		BD1926B31B04595F001A5C02 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		BD1926B51B048593001A5C02 /* ProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressLabel.h; sourceTree = "<group>"; };
+		BD1926B61B048593001A5C02 /* ProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressLabel.m; sourceTree = "<group>"; };
 		BD4283741AE7B0C400953F61 /* TC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4283781AE7B0C400953F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4283791AE7B0C400953F61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				BD42837C1AE7B0C400953F61 /* AppDelegate.m */,
 				BD1926B21B04595F001A5C02 /* ProgressView.h */,
 				BD1926B31B04595F001A5C02 /* ProgressView.m */,
+				BD1926B51B048593001A5C02 /* ProgressLabel.h */,
+				BD1926B61B048593001A5C02 /* ProgressLabel.m */,
 				BD4283811AE7B0C400953F61 /* ViewController.h */,
 				BD4283821AE7B0C400953F61 /* ViewController.m */,
 				BD8CFE931AFF99C000EDB3B8 /* ProViewController.h */,
@@ -364,6 +369,7 @@
 				BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */,
 				BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */,
 				BD8BCD5B1B02001E00BBCBFD /* SettingTableViewCell.m in Sources */,
+				BD1926B71B048594001A5C02 /* ProgressLabel.m in Sources */,
 				BD42837A1AE7B0C400953F61 /* main.m in Sources */,
 				BD8BCD581B01FCFC00BBCBFD /* SettingInfo.m in Sources */,
 				BD1926B41B04595F001A5C02 /* ProgressView.m in Sources */,
