@@ -10,4 +10,12 @@
 
 @interface ProgressView : UIView
 
+- (void)start;
+
+- (void)pause;
+
+- (void)stop;
+
+- (void)resume;
+
 @end

@@ -100,7 +100,7 @@
                                 <rect key="frame" x="287" y="363" width="25" height="9"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-45-68z" userLabel="OnButton">
-                                <rect key="frame" x="146" y="276" width="160" height="50"/>
+                                <rect key="frame" x="146" y="281" width="160" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="8aq-1y-cUt"/>
                                     <constraint firstAttribute="height" constant="50" id="zXP-XQ-XVK"/>
@@ -109,9 +109,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onButtonDidTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8vg-BG-1jr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70h-Mq-A3M" userLabel="OffButton">
-                                <rect key="frame" x="296" y="276" width="160" height="50"/>
+                                <rect key="frame" x="296" y="281" width="160" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AcO-Nb-U1n"/>
                                     <constraint firstAttribute="width" constant="160" id="zcl-4D-PzC"/>
@@ -119,9 +122,12 @@
                                 <state key="normal" image="OFF">
                                     <color key="titleColor" red="0.72941176470588232" green="0.73725490196078436" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="offButtonDidTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iqD-vK-wc1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evT-fm-s19" userLabel="CancelButton">
-                                <rect key="frame" x="220" y="389" width="160" height="50"/>
+                                <rect key="frame" x="220" y="399" width="160" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="LeG-lz-cV2"/>
                                     <constraint firstAttribute="width" constant="160" id="ZuK-GN-Bcg"/>
@@ -130,6 +136,9 @@
                                     <color key="titleColor" red="0.72941176470588232" green="0.73725490196078436" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonDidTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CDw-Kf-ejC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,7 +151,7 @@
                             <constraint firstItem="hKU-3S-v5l" firstAttribute="top" secondItem="wWc-rR-28u" secondAttribute="bottom" id="Dei-qF-GZU"/>
                             <constraint firstItem="F5l-EQ-8rc" firstAttribute="height" secondItem="7qm-yv-JpH" secondAttribute="height" id="EBU-ga-Es5"/>
                             <constraint firstAttribute="centerX" secondItem="F5l-EQ-8rc" secondAttribute="centerX" id="Fvu-2b-aGF"/>
-                            <constraint firstItem="70h-Mq-A3M" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="75" id="GQO-Jr-XRS"/>
+                            <constraint firstItem="70h-Mq-A3M" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="80" id="GQO-Jr-XRS"/>
                             <constraint firstItem="70h-Mq-A3M" firstAttribute="leading" secondItem="EN1-PN-Dny" secondAttribute="leading" constant="135" id="Lbm-gW-ukb"/>
                             <constraint firstAttribute="centerX" secondItem="f65-Mw-9Sw" secondAttribute="centerX" constant="32" id="P0k-HX-jwZ"/>
                             <constraint firstAttribute="centerY" secondItem="EN1-PN-Dny" secondAttribute="centerY" constant="-40" id="Sv6-Q5-i5d"/>
@@ -155,8 +164,8 @@
                             <constraint firstItem="EN1-PN-Dny" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f65-Mw-9Sw" secondAttribute="bottom" constant="10" id="bfs-pg-5Ze"/>
                             <constraint firstItem="lbW-0W-WGN" firstAttribute="centerY" secondItem="hKU-3S-v5l" secondAttribute="centerY" id="c9b-ko-jsF"/>
                             <constraint firstAttribute="width" secondItem="hKU-3S-v5l" secondAttribute="width" id="cUn-rL-Qn4"/>
-                            <constraint firstItem="EN1-PN-Dny" firstAttribute="top" secondItem="EBX-45-68z" secondAttribute="top" constant="-75" id="ccL-Xu-0TE"/>
-                            <constraint firstItem="evT-fm-s19" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="188" id="f4K-X5-gPr"/>
+                            <constraint firstItem="EN1-PN-Dny" firstAttribute="top" secondItem="EBX-45-68z" secondAttribute="top" constant="-80" id="ccL-Xu-0TE"/>
+                            <constraint firstItem="evT-fm-s19" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="198" id="f4K-X5-gPr"/>
                             <constraint firstItem="vK5-Vu-23U" firstAttribute="centerY" secondItem="EN1-PN-Dny" secondAttribute="centerY" id="iAQ-FD-YEw"/>
                             <constraint firstItem="Dvc-18-oY8" firstAttribute="leading" secondItem="f65-Mw-9Sw" secondAttribute="trailing" constant="-12" id="ift-9x-Scg"/>
                             <constraint firstItem="gnB-Cs-s9I" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="19" id="jGb-Bx-zrw"/>
@@ -176,6 +185,7 @@
                     <connections>
                         <outlet property="myOffButton" destination="70h-Mq-A3M" id="nie-1h-5tF"/>
                         <outlet property="myOnButton" destination="EBX-45-68z" id="NX3-2d-04v"/>
+                        <outlet property="progressView" destination="vK5-Vu-23U" id="nIX-x8-q32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
