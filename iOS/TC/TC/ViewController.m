@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "ProgressView.h"
+#import "ProgressLabel.h"
+#import "SettingInfo.h"
 
 @interface ViewController ()
 
@@ -15,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *myOffButton;
 @property (weak, nonatomic) IBOutlet ProgressView *progressView;
 @property (nonatomic) BOOL isStarted;
+@property (weak, nonatomic) IBOutlet ProgressLabel *timeLabel;
 
 @end
 
@@ -33,7 +36,9 @@
 }
 
 - (IBAction)onButtonDidTouch:(id)sender {
+    self.timeLabel.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
     [self.progressView start];
+    [self.timeLabel start];
     self.isStarted = YES;
 }
 
@@ -44,9 +49,11 @@
         isPause = !isPause;
         if (isPause) {
             [self.progressView resume];
+            [self.timeLabel resume];
             [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
         } else {
             [self.progressView pause];
+            [self.timeLabel pause];
             [self.myOffButton setImage:[UIImage imageNamed:@"Resume"] forState:UIControlStateNormal];
         }
     }
@@ -54,6 +61,7 @@
 
 - (IBAction)cancelButtonDidTouch:(id)sender {
     [self.progressView stop];
+    [self.timeLabel stop];
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
     self.isStarted = NO;
 }
