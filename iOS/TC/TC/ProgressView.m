@@ -28,7 +28,6 @@
         return;
     }
     
-    self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
     CGRect bounds = self.bounds;
     
     CGPoint center;
@@ -52,6 +51,7 @@
 - (void)updateUI {
     if (self.drawedTime >= self.totalTime-0.1) {
         self.finished = YES;
+        self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
         [self.timer invalidate];
         self.timer = nil;
     }
@@ -63,6 +63,7 @@
     [self.timer invalidate];
     self.finished = NO;
     self.drawedTime = 0;
+    self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI)  userInfo:nil repeats:YES];
 }
 

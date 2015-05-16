@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *myOffButton;
 @property (weak, nonatomic) IBOutlet ProgressView *progressView;
 @property (nonatomic) BOOL isStarted;
+@property (nonatomic) BOOL isPaused;
 @property (weak, nonatomic) IBOutlet ProgressLabel *timeLabel;
 
 @end
@@ -28,6 +29,7 @@
     [self.myOnButton setTransform:CGAffineTransformMakeRotation(-M_PI/3)];
     [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
     self.isStarted = NO;
+    self.isPaused = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,18 +38,18 @@
 }
 
 - (IBAction)onButtonDidTouch:(id)sender {
-    self.timeLabel.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
     [self.progressView start];
     [self.timeLabel start];
     self.isStarted = YES;
+    self.isPaused = YES;
+    [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
 }
 
 - (IBAction)offButtonDidTouch:(id)sender {
-    static BOOL isPause = YES;
     
     if (self.isStarted) {
-        isPause = !isPause;
-        if (isPause) {
+        self.isPaused = !self.isPaused;
+        if (self.isPaused) {
             [self.progressView resume];
             [self.timeLabel resume];
             [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];

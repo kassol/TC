@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic) float drawedTime;
+@property (nonatomic) float totalTime;
 @property (nonatomic) BOOL finished;
 
 @end
@@ -25,19 +26,26 @@
 - (void)updateUI {
     if (self.drawedTime >= self.totalTime-0.1) {
         self.finished = YES;
+        self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
         [self.timer invalidate];
         self.timer = nil;
     }
-    self.drawedTime += REFRESH_TIME;
+    if (self.finished) {
+        self.drawedTime = 0;
+    } else {
+        self.drawedTime += REFRESH_TIME;
+    }
     
-    float currentTime = (1-self.drawedTime/self.totalTime)*[SettingInfo sharedSettingInfo].pomodoroDuration;
-    [self setText:[[NSString alloc] initWithFormat:@"%.2f", currentTime]];
+    int currentMinute = (int)(self.totalTime-self.drawedTime)/60;
+    int currentSecond = (int)(self.totalTime-self.drawedTime)%60;
+    [self setText:[[NSString alloc] initWithFormat:@"%i:%02i", currentMinute, currentSecond]];
 }
 
 - (void)start {
     [self.timer invalidate];
     self.finished = NO;
     self.drawedTime = 0;
+    self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI)  userInfo:nil repeats:YES];
 }
 
@@ -50,7 +58,7 @@
     if (!self.timer) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
     }
-    self.drawedTime = self.totalTime+1;
+    self.drawedTime = self.totalTime;
 }
 
 - (void)resume {

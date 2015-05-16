@@ -10,8 +10,6 @@
 
 @interface ProgressLabel : UILabel
 
-@property (nonatomic) float totalTime;
-
 - (void)start;
 
 - (void)pause;
