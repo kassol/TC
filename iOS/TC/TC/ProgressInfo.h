@@ -20,4 +20,6 @@
 
 - (void)updateSetting;
 
+- (void)restoreState;
+
 @end

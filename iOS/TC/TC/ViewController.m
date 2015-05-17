@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "ProgressView.h"
 #import "ProgressLabel.h"
 #import "ProgressInfo.h"
 #import "SettingInfo.h"
@@ -32,6 +31,7 @@
     [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
     self.isStarted = NO;
     self.isPaused = YES;
+    self.progressView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,10 +64,11 @@
 }
 
 - (IBAction)cancelButtonDidTouch:(id)sender {
+    self.isStarted = NO;
     [self.progressView stop];
     [self.timeLabel stop];
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
-    self.isStarted = NO;
+    [[ProgressInfo sharedProgressInfo] restoreState];
     if ([SettingInfo sharedSettingInfo].isModified) {
         [self updateControls];
     }
@@ -78,6 +79,14 @@
         [[ProgressInfo sharedProgressInfo] updateSetting];
         [[SettingInfo sharedSettingInfo]modifiedHasUsed];
         [self.timeLabel reloadData];
+    }
+}
+
+- (void)timerViewDidFinishedTiming:(ProgressView *)TimerView {
+    if (self.isStarted) {
+        [[ProgressInfo sharedProgressInfo] nextState];
+        [self.progressView start];
+        [self.timeLabel start];
     }
 }
 

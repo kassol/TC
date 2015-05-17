@@ -54,6 +54,9 @@
         self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
         [self.timer invalidate];
         self.timer = nil;
+        if (self.delegate) {
+            [self.delegate timerViewDidFinishedTiming:self];
+        }
     }
     if (self.finished) {
         self.drawedTime = 0;

@@ -50,7 +50,7 @@ static ProgressInfo *progressInfoInstance = nil;
     ++self.counter;
     if (self.counter%2 == 0) {
         self.state = 0;
-    } else if ((self.counter/2)%self.nearlyLongBreakAfter == 0) {
+    } else if ((self.counter/2)%self.nearlyLongBreakAfter == self.nearlyLongBreakAfter-1) {
         self.state = 2;
     } else {
         self.state = 1;
@@ -67,6 +67,8 @@ static ProgressInfo *progressInfoInstance = nil;
     }
 }
 
-
+- (void)restoreState {
+    self.state = 0;
+}
 
 @end
