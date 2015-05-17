@@ -28,6 +28,7 @@
 		BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */; };
 		BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */; };
 		BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */; };
+		BDFE06FC1B08416500541A48 /* ProgressInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE06FB1B08416500541A48 /* ProgressInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogTableViewCell.m; sourceTree = "<group>"; };
 		BDD3FE491B007E4F004BD1D4 /* CatalogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogItem.h; sourceTree = "<group>"; };
 		BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItem.m; sourceTree = "<group>"; };
+		BDFE06FA1B08416500541A48 /* ProgressInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressInfo.h; sourceTree = "<group>"; };
+		BDFE06FB1B08416500541A48 /* ProgressInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 				BD8BCD531B01F78000BBCBFD /* Catalog.m */,
 				BD8BCD561B01FCFC00BBCBFD /* SettingInfo.h */,
 				BD8BCD571B01FCFC00BBCBFD /* SettingInfo.m */,
+				BDFE06FA1B08416500541A48 /* ProgressInfo.h */,
+				BDFE06FB1B08416500541A48 /* ProgressInfo.m */,
 			);
 			name = modal;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				BD8BCD541B01F78000BBCBFD /* Catalog.m in Sources */,
 				BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */,
 				BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */,
+				BDFE06FC1B08416500541A48 /* ProgressInfo.m in Sources */,
 				BD8BCD511B01F2B500BBCBFD /* SettingViewController.m in Sources */,
 				BD4283831AE7B0C400953F61 /* ViewController.m in Sources */,
 				BD8BCD4E1B01D1E700BBCBFD /* AddViewController.m in Sources */,

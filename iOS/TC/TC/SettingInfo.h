@@ -14,7 +14,15 @@
 @property (nonatomic)NSUInteger shortBreak;
 @property (nonatomic)NSUInteger longBreak;
 @property (nonatomic)NSUInteger longBreakAfter;
+@property (nonatomic, readonly)BOOL isModified;
 
 + (instancetype)sharedSettingInfo;
+
+- (void)setPomodoroDuration:(NSUInteger)pomodoroDuration;
+- (void)setShortBreak:(NSUInteger)shortBreak;
+- (void)setLongBreak:(NSUInteger)longBreak;
+- (void)setLongBreakAfter:(NSUInteger)longBreakAfter;
+
+- (void)modifiedHasUsed;
 
 @end

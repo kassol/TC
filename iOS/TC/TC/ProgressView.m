@@ -9,7 +9,7 @@
 #define REFRESH_TIME 0.04
 
 #import "ProgressView.h"
-#import "SettingInfo.h"
+#import "ProgressInfo.h"
 
 @interface ProgressView ()
 
@@ -51,11 +51,15 @@
 - (void)updateUI {
     if (self.drawedTime >= self.totalTime-0.1) {
         self.finished = YES;
-        self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
+        self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
         [self.timer invalidate];
         self.timer = nil;
     }
-    self.drawedTime += REFRESH_TIME;
+    if (self.finished) {
+        self.drawedTime = 0;
+    } else {
+        self.drawedTime += REFRESH_TIME;
+    }
     [self setNeedsDisplay];
 }
 
@@ -63,7 +67,7 @@
     [self.timer invalidate];
     self.finished = NO;
     self.drawedTime = 0;
-    self.totalTime = [SettingInfo sharedSettingInfo].pomodoroDuration*60;
+    self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI)  userInfo:nil repeats:YES];
 }
 
@@ -76,7 +80,7 @@
     if (!self.timer) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
     }
-    self.drawedTime = self.totalTime+1;
+    self.drawedTime = self.totalTime;
 }
 
 - (void)resume {

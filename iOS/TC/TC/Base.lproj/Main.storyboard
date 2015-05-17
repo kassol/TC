@@ -652,7 +652,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="MFh-qE-LlE"/>
+                        <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="4QM-AM-vfm"/>
                         <segue destination="FdV-rj-eph" kind="presentation" identifier="SettingDetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="2Oz-Af-vmH"/>
                     </connections>
                 </viewController>

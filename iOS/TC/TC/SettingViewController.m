@@ -10,9 +10,12 @@
 #import "SettingTableViewCell.h"
 #import "SettingInfo.h"
 #import "TimePickerViewController.h"
+#import "ProgressInfo.h"
+#import "ViewController.h"
 
 @interface SettingViewController ()
 @property (nonatomic, strong)NSArray *settingLabelHeaders;
+@property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @end
 
@@ -63,6 +66,15 @@
     if ([segue.identifier isEqual: @"SettingDetailSegue"]) {
         TimePickerViewController* toView = segue.destinationViewController;
         toView.selectedTableIndex = [self.settingTableView indexPathForCell:(SettingTableViewCell *)sender].row;
+    } else {
+        ViewController* toView = segue.destinationViewController;
+        [toView updateControls];
+    }
+}
+
+- (void)updateControls {
+    if ([SettingInfo sharedSettingInfo].isModified) {
+        [self.settingTableView reloadData];
     }
 }
 

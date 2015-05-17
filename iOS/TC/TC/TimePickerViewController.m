@@ -66,8 +66,9 @@
         } else if (self.selectedTableIndex == 3) {
             [SettingInfo sharedSettingInfo].longBreakAfter = [[self.longBreakAfterTimes objectAtIndex:[self.timePicker selectedRowInComponent:0]] unsignedIntegerValue];
         }
+        
         SettingViewController* toView = segue.destinationViewController;
-        [toView.settingTableView reloadData];
+        [toView updateControls];
     }
 }
 

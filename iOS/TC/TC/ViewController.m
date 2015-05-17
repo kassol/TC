@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ProgressView.h"
 #import "ProgressLabel.h"
+#import "ProgressInfo.h"
 #import "SettingInfo.h"
 
 @interface ViewController ()
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet ProgressView *progressView;
 @property (nonatomic) BOOL isStarted;
 @property (nonatomic) BOOL isPaused;
+@property (nonatomic) BOOL isSettingUpdated;
 @property (weak, nonatomic) IBOutlet ProgressLabel *timeLabel;
 
 @end
@@ -66,6 +68,17 @@
     [self.timeLabel stop];
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
     self.isStarted = NO;
+    if ([SettingInfo sharedSettingInfo].isModified) {
+        [self updateControls];
+    }
+}
+
+- (void)updateControls {
+    if (!self.isStarted) {
+        [[ProgressInfo sharedProgressInfo] updateSetting];
+        [[SettingInfo sharedSettingInfo]modifiedHasUsed];
+        [self.timeLabel reloadData];
+    }
 }
 
 @end
