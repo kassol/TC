@@ -40,6 +40,9 @@
 }
 
 - (IBAction)onButtonDidTouch:(id)sender {
+    if (self.isStarted) {
+        return;
+    }
     [self.progressView start];
     [self.timeLabel start];
     self.isStarted = YES;
