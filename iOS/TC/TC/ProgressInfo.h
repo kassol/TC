@@ -14,7 +14,7 @@
 @property (nonatomic) float totalTime;
 @property (nonatomic) float elapseTime;
 @property (nonatomic) BOOL isFinshedCurrentState;
-@property (nonatomic) NSData *backgroundTimeStamp;
+@property (nonatomic) NSDate *backgroundTimeStamp;
 
 + (instancetype)sharedProgressInfo;
 
