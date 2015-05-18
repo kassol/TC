@@ -10,9 +10,17 @@
 
 @interface ProgressInfo : NSObject
 
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic) float totalTime;
+@property (nonatomic) float elapseTime;
+@property (nonatomic) BOOL isFinshedCurrentState;
+@property (nonatomic) NSData *backgroundTimeStamp;
+
 + (instancetype)sharedProgressInfo;
 
 - (instancetype)init;
+
+- (void)elapse:(float)elapseTime;
 
 - (void)nextState;
 

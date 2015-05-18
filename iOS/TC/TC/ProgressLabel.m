@@ -11,65 +11,13 @@
 #import "ProgressLabel.h"
 #import "ProgressInfo.h"
 
-@interface ProgressLabel ()
-
-@property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic) float drawedTime;
-@property (nonatomic) float totalTime;
-@property (nonatomic) BOOL finished;
-
-@end
-
 @implementation ProgressLabel
 
 
 - (void)updateUI {
-    if (self.drawedTime >= self.totalTime-0.1) {
-        self.finished = YES;
-        self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
-        [self.timer invalidate];
-        self.timer = nil;
-    }
-    if (self.finished) {
-        self.drawedTime = 0;
-    } else {
-        self.drawedTime += REFRESH_TIME;
-    }
-    
-    int currentMinute = (int)(self.totalTime-self.drawedTime)/60;
-    int currentSecond = (int)(self.totalTime-self.drawedTime)%60;
+    int currentMinute = (int)([ProgressInfo sharedProgressInfo].totalTime-[ProgressInfo sharedProgressInfo].elapseTime)/60;
+    int currentSecond = (int)([ProgressInfo sharedProgressInfo].totalTime-[ProgressInfo sharedProgressInfo].elapseTime)%60;
     [self setText:[[NSString alloc] initWithFormat:@"%i:%02i", currentMinute, currentSecond]];
-}
-
-- (void)start {
-    [self.timer invalidate];
-    self.finished = NO;
-    self.drawedTime = 0;
-    self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI)  userInfo:nil repeats:YES];
-}
-
-- (void)pause {
-    [self.timer invalidate];
-    self.timer = nil;
-}
-
-- (void)stop {
-    if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
-    }
-    self.drawedTime = self.totalTime;
-}
-
-- (void)resume {
-    if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
-    }
-}
-- (void)reloadData {
-    self.finished = YES;
-    self.totalTime = [[ProgressInfo sharedProgressInfo] currentTotalTime];
-    [self updateUI];
 }
 
 @end

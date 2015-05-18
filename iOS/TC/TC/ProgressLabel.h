@@ -9,15 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ProgressLabel : UILabel
-
-- (void)start;
-
-- (void)pause;
-
-- (void)stop;
-
-- (void)resume;
-
-- (void)reloadData;
-
+- (void)updateUI;
 @end

@@ -35,8 +35,17 @@ static ProgressInfo *progressInfoInstance = nil;
     self = [super init];
     self.state = 0;
     self.counter = 0;
+    self.isFinshedCurrentState = NO;
     [self updateSetting];
     return self;
+}
+
+- (void)elapse:(float)elapseTime {
+    self.elapseTime += elapseTime;
+    
+    if (self.elapseTime >= self.totalTime-0.1) {
+        self.isFinshedCurrentState = YES;
+    }
 }
 
 - (void)updateSetting {
@@ -44,6 +53,7 @@ static ProgressInfo *progressInfoInstance = nil;
     self.nearlyShortBreak = [SettingInfo sharedSettingInfo].shortBreak;
     self.nearlyLongBreak = [SettingInfo sharedSettingInfo].longBreak;
     self.nearlyLongBreakAfter = [SettingInfo sharedSettingInfo].longBreakAfter;
+    [self restoreState];
 }
 
 - (void)nextState {
@@ -55,6 +65,15 @@ static ProgressInfo *progressInfoInstance = nil;
     } else {
         self.state = 1;
     }
+    self.elapseTime = 0;
+    if (self.state == 0) {
+        self.totalTime = self.nearlyPomodoroDuration*60;
+    } else if (self.state == 1) {
+        self.totalTime = self.nearlyShortBreak*60;
+    } else {
+        self.totalTime = self.nearlyLongBreak*60;
+    }
+    self.isFinshedCurrentState = NO;
 }
 
 - (float)currentTotalTime {
@@ -68,7 +87,10 @@ static ProgressInfo *progressInfoInstance = nil;
 }
 
 - (void)restoreState {
+    self.counter = 0;
     self.state = 0;
+    self.elapseTime = 0;
+    self.totalTime = self.nearlyPomodoroDuration*60;
 }
 
 @end

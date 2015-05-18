@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 3lang. All rights reserved.
 //
 
+#define REFRESH_TIME 0.04
+
 #import "ViewController.h"
 #import "ProgressLabel.h"
 #import "ProgressInfo.h"
@@ -31,7 +33,6 @@
     [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
     self.isStarted = NO;
     self.isPaused = YES;
-    self.progressView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,53 +44,61 @@
     if (self.isStarted) {
         return;
     }
-    [self.progressView start];
-    [self.timeLabel start];
+    
     self.isStarted = YES;
     self.isPaused = YES;
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+    
+    [[ProgressInfo sharedProgressInfo].timer invalidate];
+    [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
 }
 
 - (IBAction)offButtonDidTouch:(id)sender {
-    
     if (self.isStarted) {
         self.isPaused = !self.isPaused;
         if (self.isPaused) {
-            [self.progressView resume];
-            [self.timeLabel resume];
             [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+            if (![ProgressInfo sharedProgressInfo].timer) {
+                [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
+            }
         } else {
-            [self.progressView pause];
-            [self.timeLabel pause];
             [self.myOffButton setImage:[UIImage imageNamed:@"Resume"] forState:UIControlStateNormal];
+            [[ProgressInfo sharedProgressInfo].timer invalidate];
+            [ProgressInfo sharedProgressInfo].timer = nil;
         }
     }
 }
 
 - (IBAction)cancelButtonDidTouch:(id)sender {
     self.isStarted = NO;
-    [self.progressView stop];
-    [self.timeLabel stop];
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+    [[ProgressInfo sharedProgressInfo].timer invalidate];
+    [ProgressInfo sharedProgressInfo].timer = nil;
+    
     [[ProgressInfo sharedProgressInfo] restoreState];
     if ([SettingInfo sharedSettingInfo].isModified) {
-        [self updateControls];
+        [self updateSettings];
     }
+    
+    [self.progressView setNeedsDisplay];
+    [self.timeLabel updateUI];
 }
 
-- (void)updateControls {
+- (void)updateSettings {
     if (!self.isStarted) {
         [[ProgressInfo sharedProgressInfo] updateSetting];
         [[SettingInfo sharedSettingInfo]modifiedHasUsed];
-        [self.timeLabel reloadData];
+        [self.progressView setNeedsDisplay];
+        [self.timeLabel updateUI];
     }
 }
 
-- (void)timerViewDidFinishedTiming:(ProgressView *)TimerView {
-    if (self.isStarted) {
+- (void)elapse {
+    [[ProgressInfo sharedProgressInfo] elapse:REFRESH_TIME];
+    [self.progressView setNeedsDisplay];
+    [self.timeLabel updateUI];
+    if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
         [[ProgressInfo sharedProgressInfo] nextState];
-        [self.progressView start];
-        [self.timeLabel start];
     }
 }
 

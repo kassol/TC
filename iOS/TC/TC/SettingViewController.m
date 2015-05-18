@@ -68,7 +68,7 @@
         toView.selectedTableIndex = [self.settingTableView indexPathForCell:(SettingTableViewCell *)sender].row;
     } else {
         ViewController* toView = segue.destinationViewController;
-        [toView updateControls];
+        [toView updateSettings];
     }
 }
 

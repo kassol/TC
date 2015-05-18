@@ -8,25 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ProgressView;
-
-@protocol ProgressViewDelegate <NSObject>
-
-@required
-- (void) timerViewDidFinishedTiming:(ProgressView*)TimerView;
-
-@end
 
 @interface ProgressView : UIView
-
-@property (nonatomic, strong) id<ProgressViewDelegate> delegate;
-
-- (void)start;
-
-- (void)pause;
-
-- (void)stop;
-
-- (void)resume;
 
 @end
