@@ -17,6 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        [application registerUserNotificationSettings:
+         [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|
+          UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notification) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
     return YES;
 }
 
@@ -34,7 +47,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     NSTimeInterval elapse = [[NSDate date] timeIntervalSinceDate:[ProgressInfo sharedProgressInfo].backgroundTimeStamp];
-    [ProgressInfo sharedProgressInfo].elapseTime += elapse;
+    [[ProgressInfo sharedProgressInfo] elapse:elapse];
     
 }
 
@@ -45,6 +58,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
+    [[ProgressInfo sharedProgressInfo] stopNotification];
     [self saveContext];
 }
 
@@ -125,6 +139,17 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[ProgressInfo sharedProgressInfo] nextState];
     }
 }
 

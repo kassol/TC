@@ -30,4 +30,8 @@
 
 - (void)restoreState;
 
+- (void)startNotification;
+
+- (void)stopNotification;
+
 @end

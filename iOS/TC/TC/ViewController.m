@@ -49,6 +49,7 @@
     self.isPaused = YES;
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
     
+    [[ProgressInfo sharedProgressInfo] startNotification];
     [[ProgressInfo sharedProgressInfo].timer invalidate];
     [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
 }
@@ -58,11 +59,13 @@
         self.isPaused = !self.isPaused;
         if (self.isPaused) {
             [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+            [[ProgressInfo sharedProgressInfo] startNotification];
             if (![ProgressInfo sharedProgressInfo].timer) {
                 [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
             }
         } else {
             [self.myOffButton setImage:[UIImage imageNamed:@"Resume"] forState:UIControlStateNormal];
+            [[ProgressInfo sharedProgressInfo] stopNotification];
             [[ProgressInfo sharedProgressInfo].timer invalidate];
             [ProgressInfo sharedProgressInfo].timer = nil;
         }
@@ -72,6 +75,7 @@
 - (IBAction)cancelButtonDidTouch:(id)sender {
     self.isStarted = NO;
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+    [[ProgressInfo sharedProgressInfo] stopNotification];
     [[ProgressInfo sharedProgressInfo].timer invalidate];
     [ProgressInfo sharedProgressInfo].timer = nil;
     
@@ -98,7 +102,6 @@
     [self.progressView setNeedsDisplay];
     [self.timeLabel updateUI];
     if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
-        [[ProgressInfo sharedProgressInfo] nextState];
     }
 }
 

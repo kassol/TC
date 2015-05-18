@@ -8,6 +8,7 @@
 
 #import "ProgressInfo.h"
 #import "SettingInfo.h"
+@import UIKit;
 
 @interface ProgressInfo ()
 @property (nonatomic) NSInteger state;  //0 for work, 1 for short break, 2 for long break;
@@ -17,6 +18,7 @@
 @property (nonatomic) NSInteger nearlyShortBreak;
 @property (nonatomic) NSInteger nearlyLongBreak;
 @property (nonatomic) NSInteger nearlyLongBreakAfter;
+@property (nonatomic, strong) UILocalNotification *notification;
 @end
 
 @implementation ProgressInfo
@@ -45,6 +47,7 @@ static ProgressInfo *progressInfoInstance = nil;
     
     if (self.elapseTime >= self.totalTime-0.1) {
         self.isFinshedCurrentState = YES;
+        self.elapseTime = self.totalTime;
     }
 }
 
@@ -74,6 +77,7 @@ static ProgressInfo *progressInfoInstance = nil;
         self.totalTime = self.nearlyLongBreak*60;
     }
     self.isFinshedCurrentState = NO;
+    [self startNotification];
 }
 
 - (float)currentTotalTime {
@@ -91,6 +95,32 @@ static ProgressInfo *progressInfoInstance = nil;
     self.state = 0;
     self.elapseTime = 0;
     self.totalTime = self.nearlyPomodoroDuration*60;
+}
+
+- (void)startNotification {
+    if (self.notification == nil) {
+        self.notification = [[UILocalNotification alloc] init];
+    }
+    self.notification.fireDate = [[NSDate date] dateByAddingTimeInterval:self.totalTime-self.elapseTime];
+    self.notification.timeZone = [NSTimeZone defaultTimeZone];
+    self.notification.soundName = @"ping.caf";
+    self.notification.alertBody = @"Time is up!";
+    NSDictionary* info = [NSDictionary dictionaryWithObject:@"Notification" forKey:@"Notification"];
+    self.notification.userInfo = info;
+    
+    [[UIApplication sharedApplication]scheduleLocalNotification:self.notification];
+}
+
+- (void)stopNotification {
+    NSString *myIDtoCancel  = @"Notification";
+    UILocalNotification *notificationToCancel = nil;
+    for (UILocalNotification *aNoti in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        if ([[aNoti.userInfo objectForKey:@"Notification"] isEqualToString:myIDtoCancel]) {
+            notificationToCancel = aNoti;
+            break;
+        }
+    }
+    [[UIApplication sharedApplication] cancelLocalNotification:notificationToCancel];
 }
 
 @end
