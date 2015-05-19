@@ -118,9 +118,9 @@
     if (!label) {
         label = [[UILabel alloc] init];
         if (component == 0) {
-            [label setTextColor:[UIColor colorWithRed:0.729 green:0.737 blue:0.702 alpha:1.0]];
-        } else {
             [label setTextColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
+        } else {
+            [label setTextColor:[UIColor colorWithRed:0.729 green:0.737 blue:0.702 alpha:1.0]];
         }
     }
     [label setTextAlignment:NSTextAlignmentCenter];

@@ -33,6 +33,10 @@
     return [self.settingLabelHeaders count];
 }
 
+- (IBAction)aboutButtonDidTouch:(id)sender {
+    [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+}
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SettingTableViewCell* cell = [self.settingTableView dequeueReusableCellWithIdentifier:@"SettingTableCell"];
     cell.firstLabel.text = [self.settingLabelHeaders objectAtIndex:indexPath.row];
@@ -67,8 +71,10 @@
         TimePickerViewController* toView = segue.destinationViewController;
         toView.selectedTableIndex = [self.settingTableView indexPathForCell:(SettingTableViewCell *)sender].row;
     } else {
-        ViewController* toView = segue.destinationViewController;
-        [toView updateSettings];
+        if ([segue.destinationViewController respondsToSelector:@selector(updateSettings)]) {
+            ViewController* toView = segue.destinationViewController;
+            [toView updateSettings];
+        }
     }
 }
 
