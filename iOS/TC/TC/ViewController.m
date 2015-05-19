@@ -33,6 +33,7 @@
     [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
     self.isStarted = NO;
     self.isPaused = YES;
+    [self.timeLabel updateUI];
 }
 
 - (void)didReceiveMemoryWarning {

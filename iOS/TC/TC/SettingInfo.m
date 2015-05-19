@@ -31,6 +31,7 @@ static SettingInfo *settingInfoInstance = nil;
     
     dispatch_once(&once, ^{
         settingInfoInstance = [[self alloc] init];
+        
     });
     
     return settingInfoInstance;

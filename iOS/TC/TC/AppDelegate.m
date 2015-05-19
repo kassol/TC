@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ProgressInfo.h"
+#import "DataManager.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
          [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|
           UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+    
+    [[DataManager sharedDataManager] readData];
     
     UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (notification) {
@@ -59,6 +62,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [[ProgressInfo sharedProgressInfo] stopNotification];
+    [[DataManager sharedDataManager] saveData];
     [self saveContext];
 }
 
