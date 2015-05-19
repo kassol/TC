@@ -120,7 +120,9 @@ static ProgressInfo *progressInfoInstance = nil;
             break;
         }
     }
-    [[UIApplication sharedApplication] cancelLocalNotification:notificationToCancel];
+    if (notificationToCancel) {
+        [[UIApplication sharedApplication] cancelLocalNotification:notificationToCancel];
+    }
 }
 
 @end
