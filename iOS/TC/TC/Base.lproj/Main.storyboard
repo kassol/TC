@@ -657,7 +657,7 @@
                     <connections>
                         <outlet property="settingTableView" destination="Cwd-VT-Wg6" id="4QM-AM-vfm"/>
                         <segue destination="FdV-rj-eph" kind="presentation" identifier="SettingDetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="2Oz-Af-vmH"/>
-                        <segue destination="wvg-8H-G6l" kind="presentation" identifier="AboutSegue" modalPresentationStyle="overFullScreen" id="QOA-bR-f91"/>
+                        <segue destination="wvg-8H-G6l" kind="presentation" identifier="AboutSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="QOA-bR-f91"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4J-7b-zfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
