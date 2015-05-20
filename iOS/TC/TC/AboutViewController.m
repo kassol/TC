@@ -37,6 +37,9 @@
 */
 - (IBAction)backButtonDidTouch:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    self.aboutCard.animation = @"fall";
+    self.aboutCard.duration = 2.0;
+    [self.aboutCard animate];
 }
 
 - (IBAction)authorButtonDidTouch:(id)sender {

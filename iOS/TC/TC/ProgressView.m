@@ -30,7 +30,7 @@
     path.lineWidth = 5.0;
     [path setLineCapStyle:kCGLineCapRound];
     
-    [[UIColor colorWithRed:55/255.0 green:101/255.0 blue:185/255.0 alpha:1.0] setStroke];
+    [[UIColor colorWithRed:74/255.0 green:144/255.0 blue:226/255.0 alpha:1.0] setStroke];
     
     [path stroke];
 }
