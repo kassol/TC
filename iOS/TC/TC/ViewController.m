@@ -102,8 +102,6 @@
     [[ProgressInfo sharedProgressInfo] elapse:REFRESH_TIME];
     [self.progressView setNeedsDisplay];
     [self.timeLabel updateUI];
-    if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
-    }
 }
 
 @end

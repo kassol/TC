@@ -42,30 +42,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f65-Mw-9Sw">
-                                <rect key="frame" x="232" y="110" width="72" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="NO5-uZ-ytY"/>
-                                    <constraint firstAttribute="height" constant="38" id="Xww-4o-cky"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <state key="normal" title="Single" backgroundImage="Single">
-                                    <color key="titleColor" red="0.72941176470588232" green="0.73725490196078436" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvc-18-oY8">
-                                <rect key="frame" x="292" y="110" width="72" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="2h8-01-nbT"/>
-                                    <constraint firstAttribute="width" constant="72" id="CIF-yF-Nma"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <state key="normal" title="Pro" backgroundImage="Pro">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Outer" translatesAutoresizingMaskIntoConstraints="NO" id="EN1-PN-Dny">
                                 <rect key="frame" x="161" y="201" width="278" height="278"/>
                                 <constraints>
@@ -150,21 +126,16 @@
                             <constraint firstAttribute="centerX" secondItem="F5l-EQ-8rc" secondAttribute="centerX" id="Fvu-2b-aGF"/>
                             <constraint firstItem="70h-Mq-A3M" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="80" id="GQO-Jr-XRS"/>
                             <constraint firstItem="70h-Mq-A3M" firstAttribute="leading" secondItem="EN1-PN-Dny" secondAttribute="leading" constant="135" id="Lbm-gW-ukb"/>
-                            <constraint firstAttribute="centerX" secondItem="f65-Mw-9Sw" secondAttribute="centerX" constant="32" id="P0k-HX-jwZ"/>
                             <constraint firstAttribute="centerY" secondItem="EN1-PN-Dny" secondAttribute="centerY" constant="-40" id="Sv6-Q5-i5d"/>
-                            <constraint firstItem="Dvc-18-oY8" firstAttribute="top" secondItem="f65-Mw-9Sw" secondAttribute="top" id="TcX-wg-f1y"/>
-                            <constraint firstItem="f65-Mw-9Sw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hKU-3S-v5l" secondAttribute="bottom" constant="15" id="UJe-BP-RiJ"/>
                             <constraint firstItem="cTy-r1-xGW" firstAttribute="centerY" secondItem="EN1-PN-Dny" secondAttribute="centerY" id="VbF-e5-rGT"/>
                             <constraint firstItem="vK5-Vu-23U" firstAttribute="width" secondItem="EN1-PN-Dny" secondAttribute="width" id="ZDb-C8-SHT"/>
                             <constraint firstItem="HUk-RO-vYC" firstAttribute="top" secondItem="wWc-rR-28u" secondAttribute="bottom" constant="12" id="a75-ST-Ebh"/>
                             <constraint firstItem="cTy-r1-xGW" firstAttribute="centerX" secondItem="cbn-Nd-PVN" secondAttribute="centerX" constant="0.5" id="bdg-Xg-rLg"/>
-                            <constraint firstItem="EN1-PN-Dny" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f65-Mw-9Sw" secondAttribute="bottom" constant="10" id="bfs-pg-5Ze"/>
                             <constraint firstItem="lbW-0W-WGN" firstAttribute="centerY" secondItem="hKU-3S-v5l" secondAttribute="centerY" id="c9b-ko-jsF"/>
                             <constraint firstAttribute="width" secondItem="hKU-3S-v5l" secondAttribute="width" id="cUn-rL-Qn4"/>
                             <constraint firstItem="EN1-PN-Dny" firstAttribute="top" secondItem="EBX-45-68z" secondAttribute="top" constant="-80" id="ccL-Xu-0TE"/>
                             <constraint firstItem="evT-fm-s19" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="198" id="f4K-X5-gPr"/>
                             <constraint firstItem="vK5-Vu-23U" firstAttribute="centerY" secondItem="EN1-PN-Dny" secondAttribute="centerY" id="iAQ-FD-YEw"/>
-                            <constraint firstItem="Dvc-18-oY8" firstAttribute="leading" secondItem="f65-Mw-9Sw" secondAttribute="trailing" constant="-12" id="ift-9x-Scg"/>
                             <constraint firstItem="gnB-Cs-s9I" firstAttribute="top" secondItem="EN1-PN-Dny" secondAttribute="top" constant="19" id="jGb-Bx-zrw"/>
                             <constraint firstAttribute="centerX" secondItem="HUk-RO-vYC" secondAttribute="centerX" id="nED-HY-vfI"/>
                             <constraint firstItem="EN1-PN-Dny" firstAttribute="leading" secondItem="EBX-45-68z" secondAttribute="leading" constant="15" id="rGP-OS-GPI"/>
@@ -844,10 +815,8 @@
         <image name="OFF" width="43" height="23"/>
         <image name="ON" width="36" height="23"/>
         <image name="Outer" width="278" height="268"/>
-        <image name="Pro" width="72" height="38"/>
         <image name="SettingButtonBG" width="74" height="36"/>
         <image name="SettingCardBG" width="351" height="221"/>
-        <image name="Single" width="72" height="38"/>
         <image name="TableBackground" width="375" height="319"/>
         <image name="Task-center" width="283" height="165"/>
         <image name="Task-left" width="283" height="165"/>
