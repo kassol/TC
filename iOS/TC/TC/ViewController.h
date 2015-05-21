@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProgressView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIAlertViewDelegate>
 
 
 - (void)updateSettings;

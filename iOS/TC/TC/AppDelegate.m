@@ -29,9 +29,7 @@
     [[DataManager sharedDataManager] readData];
     
     UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (notification && [[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+    if (notification) {
     }
     return YES;
 }
@@ -51,10 +49,6 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     NSTimeInterval elapse = [[NSDate date] timeIntervalSinceDate:[ProgressInfo sharedProgressInfo].backgroundTimeStamp];
     [[ProgressInfo sharedProgressInfo] elapse:elapse];
-    if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -151,12 +145,6 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [[ProgressInfo sharedProgressInfo] nextState];
-    }
 }
 
 @end

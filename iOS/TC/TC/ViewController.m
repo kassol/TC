@@ -95,6 +95,12 @@
         [[SettingInfo sharedSettingInfo]modifiedHasUsed];
         [self.progressView setNeedsDisplay];
         [self.timeLabel updateUI];
+        if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            [[ProgressInfo sharedProgressInfo].timer invalidate];
+            [ProgressInfo sharedProgressInfo].timer  = nil;
+        }
     }
 }
 
@@ -102,6 +108,15 @@
     [[ProgressInfo sharedProgressInfo] elapse:REFRESH_TIME];
     [self.progressView setNeedsDisplay];
     [self.timeLabel updateUI];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[ProgressInfo sharedProgressInfo] nextState];
+        if (![ProgressInfo sharedProgressInfo].timer) {
+            [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
+        }
+    }
 }
 
 @end
