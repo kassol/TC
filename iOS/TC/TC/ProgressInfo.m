@@ -60,6 +60,7 @@ static ProgressInfo *progressInfoInstance = nil;
 }
 
 - (void)nextState {
+    self.isFinshedCurrentState = NO;
     ++self.counter;
     if (self.counter%2 == 0) {
         self.state = 0;
@@ -76,7 +77,6 @@ static ProgressInfo *progressInfoInstance = nil;
     } else {
         self.totalTime = self.nearlyLongBreak*60;
     }
-    self.isFinshedCurrentState = NO;
     [self startNotification];
 }
 

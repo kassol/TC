@@ -62,10 +62,10 @@ static DataManager *dataManagerInstance = nil;
 - (void)saveData {
     NSString *path = [self applicationDocumentsDirectoryFile];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:[NSNumber numberWithUnsignedInt:[SettingInfo sharedSettingInfo].pomodoroDuration] forKey:@"PomodoroDuration"];
-    [dict setValue:[NSNumber numberWithUnsignedInt:[SettingInfo sharedSettingInfo].shortBreak] forKey:@"ShortBreak"];
-    [dict setValue:[NSNumber numberWithUnsignedInt:[SettingInfo sharedSettingInfo].longBreak] forKey:@"LongBreak"];
-    [dict setValue:[NSNumber numberWithUnsignedInt:[SettingInfo sharedSettingInfo].longBreakAfter] forKey:@"LongBreakAfter"];
+    [dict setValue:[NSNumber numberWithUnsignedLong:[SettingInfo sharedSettingInfo].pomodoroDuration] forKey:@"PomodoroDuration"];
+    [dict setValue:[NSNumber numberWithUnsignedLong:[SettingInfo sharedSettingInfo].shortBreak] forKey:@"ShortBreak"];
+    [dict setValue:[NSNumber numberWithUnsignedLong:[SettingInfo sharedSettingInfo].longBreak] forKey:@"LongBreak"];
+    [dict setValue:[NSNumber numberWithUnsignedLong:[SettingInfo sharedSettingInfo].longBreakAfter] forKey:@"LongBreakAfter"];
     
     [dict writeToFile:path atomically:YES];
 }
