@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ProgressDelegate <NSObject>
+
+@required
+
+- (void)elapse;
+
+@end
+
 @interface ProgressInfo : NSObject
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -15,6 +23,9 @@
 @property (nonatomic) float elapseTime;
 @property (nonatomic) BOOL isFinshedCurrentState;
 @property (nonatomic) NSDate *backgroundTimeStamp;
+@property (nonatomic, strong) id<ProgressDelegate> delegate;
+@property (nonatomic) BOOL isStarted;
+@property (nonatomic) BOOL isPaused;
 
 + (instancetype)sharedProgressInfo;
 
@@ -33,5 +44,13 @@
 - (void)startNotification;
 
 - (void)stopNotification;
+
+- (void)start;
+
+- (void)pause;
+
+- (void)resume;
+
+- (void)stop;
 
 @end

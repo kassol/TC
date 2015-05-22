@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 3lang. All rights reserved.
 //
 
+#define REFRESH_TIME 0.04
+
 #import "ProgressInfo.h"
 #import "SettingInfo.h"
 @import UIKit;
@@ -35,6 +37,8 @@ static ProgressInfo *progressInfoInstance = nil;
 
 - (instancetype)init {
     self = [super init];
+    self.isStarted = NO;
+    self.isPaused = NO;
     self.state = 0;
     self.counter = 0;
     self.isFinshedCurrentState = NO;
@@ -77,7 +81,6 @@ static ProgressInfo *progressInfoInstance = nil;
     } else {
         self.totalTime = self.nearlyLongBreak*60;
     }
-    [self startNotification];
 }
 
 - (float)currentTotalTime {
@@ -95,6 +98,8 @@ static ProgressInfo *progressInfoInstance = nil;
     self.state = 0;
     self.elapseTime = 0;
     self.totalTime = self.nearlyPomodoroDuration*60;
+    self.isStarted = NO;
+    self.isPaused = NO;
 }
 
 - (void)startNotification {
@@ -123,6 +128,46 @@ static ProgressInfo *progressInfoInstance = nil;
     if (notificationToCancel) {
         [[UIApplication sharedApplication] cancelLocalNotification:notificationToCancel];
     }
+}
+
+- (void)start {
+    self.isStarted = YES;
+    [self startNotification];
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
+}
+
+- (void)pause {
+    self.isPaused = YES;
+    [self stopNotification];
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (void)resume {
+    self.isPaused = NO;
+    [self startNotification];
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
+    }
+}
+
+- (void)stop {
+    self.isStarted = NO;
+    [self stopNotification];
+    [self.timer invalidate];
+    self.timer =nil;
+    [self updateSetting];
+    [[SettingInfo sharedSettingInfo] modifiedHasUsed];
+}
+
+- (void)elapse {
+    [self elapse:REFRESH_TIME];
+    if (self.isFinshedCurrentState) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    [self.delegate elapse];
 }
 
 @end

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 3lang. All rights reserved.
 //
 
-#define REFRESH_TIME 0.04
-
 #import "ViewController.h"
 #import "ProgressLabel.h"
 #import "ProgressInfo.h"
@@ -33,6 +31,7 @@
     [self.myOffButton setTransform:CGAffineTransformMakeRotation(M_PI/3)];
     self.isStarted = NO;
     self.isPaused = YES;
+    [ProgressInfo sharedProgressInfo].delegate = self;
     [self.timeLabel updateUI];
 }
 
@@ -42,51 +41,32 @@
 }
 
 - (IBAction)onButtonDidTouch:(id)sender {
-    if (self.isStarted) {
+    if ([[ProgressInfo sharedProgressInfo] isStarted]) {
         return;
     }
-    
-    self.isStarted = YES;
-    self.isPaused = YES;
     [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
-    
-    [[ProgressInfo sharedProgressInfo] startNotification];
-    [[ProgressInfo sharedProgressInfo].timer invalidate];
-    [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
+    [[ProgressInfo sharedProgressInfo] start];
 }
 
 - (IBAction)offButtonDidTouch:(id)sender {
-    if (self.isStarted) {
-        self.isPaused = !self.isPaused;
-        if (self.isPaused) {
+    if ([[ProgressInfo sharedProgressInfo] isStarted]) {
+        if ([[ProgressInfo sharedProgressInfo] isPaused]) {
             [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
-            [[ProgressInfo sharedProgressInfo] startNotification];
-            if (![ProgressInfo sharedProgressInfo].timer) {
-                [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
-            }
+            [[ProgressInfo sharedProgressInfo] resume];
         } else {
             [self.myOffButton setImage:[UIImage imageNamed:@"Resume"] forState:UIControlStateNormal];
-            [[ProgressInfo sharedProgressInfo] stopNotification];
-            [[ProgressInfo sharedProgressInfo].timer invalidate];
-            [ProgressInfo sharedProgressInfo].timer = nil;
+            [[ProgressInfo sharedProgressInfo] pause];
         }
     }
 }
 
 - (IBAction)cancelButtonDidTouch:(id)sender {
-    self.isStarted = NO;
-    [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
-    [[ProgressInfo sharedProgressInfo] stopNotification];
-    [[ProgressInfo sharedProgressInfo].timer invalidate];
-    [ProgressInfo sharedProgressInfo].timer = nil;
-    
-    [[ProgressInfo sharedProgressInfo] restoreState];
-    if ([SettingInfo sharedSettingInfo].isModified) {
-        [self updateSettings];
+    if ([[ProgressInfo sharedProgressInfo] isStarted]) {
+        [self.myOffButton setImage:[UIImage imageNamed:@"OFF"] forState:UIControlStateNormal];
+        [[ProgressInfo sharedProgressInfo] stop];
+        [self.progressView setNeedsDisplay];
+        [self.timeLabel updateUI];
     }
-    
-    [self.progressView setNeedsDisplay];
-    [self.timeLabel updateUI];
 }
 
 - (void)updateSettings {
@@ -99,23 +79,18 @@
 }
 
 - (void)elapse {
-    [[ProgressInfo sharedProgressInfo] elapse:REFRESH_TIME];
     [self.progressView setNeedsDisplay];
     [self.timeLabel updateUI];
     if ([[ProgressInfo sharedProgressInfo] isFinshedCurrentState]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Time is up!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
-        [[ProgressInfo sharedProgressInfo].timer invalidate];
-        [ProgressInfo sharedProgressInfo].timer  = nil;
     }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         [[ProgressInfo sharedProgressInfo] nextState];
-        if (![ProgressInfo sharedProgressInfo].timer) {
-            [ProgressInfo sharedProgressInfo].timer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_TIME target:self selector:@selector(elapse) userInfo:nil repeats:YES];
-        }
+        [[ProgressInfo sharedProgressInfo] start];
     }
 }
 
