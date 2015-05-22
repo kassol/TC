@@ -7,6 +7,11 @@
 //
 
 #import "CatalogItem.h"
+#import "Task.h"
+
+@interface CatalogItem ()
+@property (nonatomic, strong) NSMutableArray *taskList;
+@end
 
 @implementation CatalogItem
 
@@ -14,6 +19,9 @@
     self.catalogName = name;
     self.numInCatalog =  num;
     return self;
+}
+
+- (void)addTask {
 }
 
 @end

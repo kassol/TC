@@ -16,4 +16,6 @@
 - (instancetype)initWithCatalogName:(NSString*)name
                      andNum:(NSUInteger)num;
 
+- (void)addTask;
+
 @end

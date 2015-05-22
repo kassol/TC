@@ -11,6 +11,7 @@
 		BD06F72F1B0B356200BF2733 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD06F72E1B0B356200BF2733 /* DataManager.m */; };
 		BD06F7331B0B3C4600BF2733 /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD06F7321B0B3C4600BF2733 /* Setting.plist */; };
 		BD06F7361B0B5B2B00BF2733 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD06F7351B0B5B2B00BF2733 /* AboutViewController.m */; };
+		BD0E2F251B0EDAD10063BB15 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E2F241B0EDAD10063BB15 /* Task.m */; };
 		BD1926B41B04595F001A5C02 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1926B31B04595F001A5C02 /* ProgressView.m */; };
 		BD1926B71B048594001A5C02 /* ProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1926B61B048593001A5C02 /* ProgressLabel.m */; };
 		BD42837A1AE7B0C400953F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4283791AE7B0C400953F61 /* main.m */; };
@@ -53,6 +54,8 @@
 		BD06F7321B0B3C4600BF2733 /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
 		BD06F7341B0B5B2B00BF2733 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		BD06F7351B0B5B2B00BF2733 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		BD0E2F231B0EDAD10063BB15 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		BD0E2F241B0EDAD10063BB15 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		BD1926B21B04595F001A5C02 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		BD1926B31B04595F001A5C02 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		BD1926B51B048593001A5C02 /* ProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressLabel.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 		BD8BCD551B01FC7F00BBCBFD /* modal */ = {
 			isa = PBXGroup;
 			children = (
+				BD0E2F231B0EDAD10063BB15 /* Task.h */,
+				BD0E2F241B0EDAD10063BB15 /* Task.m */,
 				BDD3FE491B007E4F004BD1D4 /* CatalogItem.h */,
 				BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */,
 				BD8BCD521B01F78000BBCBFD /* Catalog.h */,
@@ -387,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD06F7361B0B5B2B00BF2733 /* AboutViewController.m in Sources */,
+				BD0E2F251B0EDAD10063BB15 /* Task.m in Sources */,
 				BD8CFE951AFF99C000EDB3B8 /* ProViewController.m in Sources */,
 				BD42837D1AE7B0C400953F61 /* AppDelegate.m in Sources */,
 				BD8BCD5B1B02001E00BBCBFD /* SettingTableViewCell.m in Sources */,
