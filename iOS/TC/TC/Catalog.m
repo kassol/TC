@@ -18,13 +18,10 @@ static Catalog *cataInstance = nil;
     
     self.catalog = [[NSMutableArray alloc]init];
     
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Inbox" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Today" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"All" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Done" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"List 1" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"List 2" andNum:0]];
-    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"List 3" andNum:0]];
+    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Inbox"]];
+    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Today"]];
+    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"All"]];
+    [self.catalog addObject:[[CatalogItem alloc] initWithCatalogName:@"Done"]];
     
     return self;
 }
@@ -36,6 +33,10 @@ static Catalog *cataInstance = nil;
     });
     
     return cataInstance;
+}
+
+- (void)addCatalogItem:(CatalogItem *)catalogItem {
+    [self.catalog addObject:catalogItem];
 }
 
 @end

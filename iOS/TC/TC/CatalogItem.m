@@ -15,13 +15,18 @@
 
 @implementation CatalogItem
 
-- (instancetype)initWithCatalogName:(NSString *)name andNum:(NSUInteger)num {
+- (instancetype)initWithCatalogName:(NSString *)name {
+    self = [super init];
     self.catalogName = name;
-    self.numInCatalog =  num;
-    return self;
+    return  self;
 }
 
-- (void)addTask {
+- (void)addTask:(Task *)task {
+    [self.taskList addObject:task];
+}
+
+- (NSInteger)getTaskNum {
+    return [self.taskList count];
 }
 
 @end

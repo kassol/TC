@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Catalog : NSObject
+@class CatalogItem;
 
+@interface Catalog : NSObject
 @property (nonatomic, strong) NSMutableArray *catalog;
 
 + (instancetype)sharedCatalog;
+
+- (void)addCatalogItem:(CatalogItem *)catalogItem;
 
 @end

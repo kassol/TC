@@ -55,7 +55,7 @@
     CatalogTableViewCell* cell = [self.myListView dequeueReusableCellWithIdentifier:@"TableCell"];
     CatalogItem* item = [[[Catalog sharedCatalog] catalog]  objectAtIndex:indexPath.row];
     cell.myFirstLabel.text = item.catalogName;
-    cell.mySecondLabel.text = [[NSString alloc]initWithFormat:@"%lu", (unsigned long)item.numInCatalog];
+    cell.mySecondLabel.text = [[NSString alloc]initWithFormat:@"%li", (long)[item getTaskNum]];
     return cell;
 }
 

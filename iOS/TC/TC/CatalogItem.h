@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Task;
+
 @interface CatalogItem : NSObject
 
 @property (nonatomic, strong)NSString* catalogName;
-@property (nonatomic)NSUInteger numInCatalog;
 
-- (instancetype)initWithCatalogName:(NSString*)name
-                     andNum:(NSUInteger)num;
+- (instancetype)initWithCatalogName:(NSString *)name;
 
-- (void)addTask;
+- (void)addTask:(Task *)task;
+
+- (NSInteger)getTaskNum;
 
 @end
