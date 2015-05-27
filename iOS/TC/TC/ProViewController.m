@@ -40,7 +40,6 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"%@", textField.text);
     [self.mySearchField resignFirstResponder];
     return YES;
 }

@@ -33,6 +33,8 @@
 		BDD3FE471B007700004BD1D4 /* CatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */; };
 		BDD3FE4B1B007E4F004BD1D4 /* CatalogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */; };
 		BDFE06FC1B08416500541A48 /* ProgressInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE06FB1B08416500541A48 /* ProgressInfo.m */; };
+		BDFF87A01B1576D4004E4037 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFF879F1B1576D4004E4037 /* TaskViewController.m */; };
+		BDFF87A31B157CB4004E4037 /* SubTaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFF87A21B157CB4004E4037 /* SubTaskTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,10 @@
 		BDD3FE4A1B007E4F004BD1D4 /* CatalogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItem.m; sourceTree = "<group>"; };
 		BDFE06FA1B08416500541A48 /* ProgressInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressInfo.h; sourceTree = "<group>"; };
 		BDFE06FB1B08416500541A48 /* ProgressInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressInfo.m; sourceTree = "<group>"; };
+		BDFF879E1B1576D4004E4037 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		BDFF879F1B1576D4004E4037 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		BDFF87A11B157CB4004E4037 /* SubTaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTaskTableViewCell.h; sourceTree = "<group>"; };
+		BDFF87A21B157CB4004E4037 /* SubTaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTaskTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,10 @@
 				BD8CFE941AFF99C000EDB3B8 /* ProViewController.m */,
 				BD8BCD4C1B01D1E700BBCBFD /* AddViewController.h */,
 				BD8BCD4D1B01D1E700BBCBFD /* AddViewController.m */,
+				BDFF879E1B1576D4004E4037 /* TaskViewController.h */,
+				BDFF879F1B1576D4004E4037 /* TaskViewController.m */,
+				BDFF87A11B157CB4004E4037 /* SubTaskTableViewCell.h */,
+				BDFF87A21B157CB4004E4037 /* SubTaskTableViewCell.m */,
 				BDD3FE451B007700004BD1D4 /* CatalogTableViewCell.h */,
 				BDD3FE461B007700004BD1D4 /* CatalogTableViewCell.m */,
 				BD8BCD591B02001E00BBCBFD /* SettingTableViewCell.h */,
@@ -407,7 +417,9 @@
 				BDFE06FC1B08416500541A48 /* ProgressInfo.m in Sources */,
 				BD8BCD511B01F2B500BBCBFD /* SettingViewController.m in Sources */,
 				BD4283831AE7B0C400953F61 /* ViewController.m in Sources */,
+				BDFF87A31B157CB4004E4037 /* SubTaskTableViewCell.m in Sources */,
 				BD8BCD4E1B01D1E700BBCBFD /* AddViewController.m in Sources */,
+				BDFF87A01B1576D4004E4037 /* TaskViewController.m in Sources */,
 				BD8BCD5E1B020BB400BBCBFD /* TimePickerViewController.m in Sources */,
 				BD4283801AE7B0C400953F61 /* TC.xcdatamodeld in Sources */,
 			);
