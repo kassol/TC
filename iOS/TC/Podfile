@@ -2,12 +2,5 @@
 # platform :ios, '6.0'
 
 use_frameworks!
-
-target 'TC' do
-pod 'Spring'
-end
-
-target 'TCTests' do
-
-end
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 
